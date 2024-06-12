@@ -60,6 +60,15 @@
             font-weight: bold;
         }
 
+        input[type="submit"] {
+      background-color: #009688;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00796b;
+    }
         input,
         textarea,
         button {
@@ -140,22 +149,17 @@
     <main>
         <section id="contact-form">
             <h2>Get in Touch</h2>
-            <form action="https://mail.google.com/mail/?view=cm&fs=1&to=alimohammad0482@gmail.com&su=" method="get"
-                id="emailForm">
-                <label for="name">Name:</label>
+            <form action="mailto:alimohammad0482@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
+                <label for="email">Your Email:</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
+                <input type="submit" value="Send Message">
         </section>
 
         <section id="contact-info">
@@ -196,21 +200,7 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('emailForm').onsubmit = function () {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var subject = document.getElementById('subject').value;
-            var message = document.getElementById('message').value;
 
-            var mailtoLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=alimohammad0482@gmail.com' +
-                '&su=' + encodeURIComponent(subject) +
-                '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-
-            window.location.href = mailtoLink;
-            return false;
-        };
-    </script>
 </body>
 
 </html>
